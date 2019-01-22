@@ -12,6 +12,9 @@ http.createServer(function (req, res) {
             <li><a href="html.html">html</a></li>
             <li><a href="css.html">css</a></li>
             <li><a href="javascript.html">javascript</a></li>
+            <li><a href="/?id=HTML">HTML</a></li>
+            <li><a href="/?id=CSS">CSS</a></li>
+            <li><a href="/?id=JavaScript">javascript</a></li>
         </ol>
         <h2>${title}</h2>
         HTML is Hypertext Markup Language. Velit pariatur reprehenderit id cupidatat officia adipisicing. Elit laboris
