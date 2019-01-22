@@ -1,5 +1,6 @@
 var http = require('http');
 var url = require('url');
+var fs = require('fs');
 http.createServer(function (req, res) {
     var parsedUrl = url.parse(req.url, true);
     var title = parsedUrl.query.id;
@@ -20,6 +21,7 @@ http.createServer(function (req, res) {
         HTML is Hypertext Markup Language. Velit pariatur reprehenderit id cupidatat officia adipisicing. Elit laboris
         pariatur enim voluptate ut ex ut qui duis aliquip aute. Commodo ut exercitation irure pariatur occaecat tempor
         ullamco
+        ${fs.readFileSync('data/'+title)}
     </body>
     </html>
     `); 
