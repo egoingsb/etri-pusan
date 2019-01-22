@@ -9,15 +9,18 @@ http.createServer(function (req, res) {
         res.end();
         return;
     }
+    var listTag = '';
+    var pages = fs.readdirSync('data');
+    for(var i=0; i<pages.length; i++){
+        listTag += `<li><a href="/?id=${pages[i]}">${pages[i]}</a></li>`;
+    }
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(`
     <html>
     <body>
         <h1><a href="/index.html">WEB</a></h1>
         <ol>
-            <li><a href="/?id=HTML">HTML</a></li>
-            <li><a href="/?id=CSS">CSS</a></li>
-            <li><a href="/?id=JavaScript">javascript</a></li>
+            ${listTag}
         </ol>
         <h2>${title}</h2>
         ${fs.readFileSync('data/'+title)}
